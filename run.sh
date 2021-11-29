@@ -1,1 +1,1 @@
-echo "test2"
+node test.js
