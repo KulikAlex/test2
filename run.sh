@@ -1,1 +1,1 @@
-node ./test.js
+node test2/test.js
