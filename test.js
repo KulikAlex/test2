@@ -11,10 +11,9 @@ async function useLint() {
         files: './**/*.css',
         config: stylelint_opt()
     });
-    console.error('out');
     for (let result of data.results) {
         for (let warning of result.warnings) {
-            console.error(String(Object.keys(warning)));
+            console.error(warning.text);
         }
     }
 }
