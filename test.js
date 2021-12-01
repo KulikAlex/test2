@@ -13,7 +13,7 @@ async function useLint() {
     });
     for (let result of data.results) {
         for (let warning of result.warnings) {
-            console.error(`${warning.line}:${warning.column} ${warning.text}`);
+            console.error(`${path.relative(process.cwd(), result.source)} ${warning.line}:${warning.column} ${warning.text}`);
         }
     }
 }
