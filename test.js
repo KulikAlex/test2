@@ -7,10 +7,9 @@ const stylelint_opt = ()=>{
 
 async function useLint() {
     const data = await stylelint.lint({
-        files: projectPath + '**/*.css',
+        files: '**/*.css',
         config: stylelint_opt()
     });
-    const errors = [];
     for (let result of data.results) {
         for (let warning of result.warnings) {
             console.error(String(Object.keys(warning)));
