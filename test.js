@@ -6,10 +6,12 @@ const stylelint_opt = ()=>{
 }
 
 async function useLint() {
+    console.error('in');
     const data = await stylelint.lint({
         files: './**/*.css',
         config: stylelint_opt()
     });
+    console.error('out');
     for (let result of data.results) {
         for (let warning of result.warnings) {
             console.error(String(Object.keys(warning)));
