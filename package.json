@@ -1,7 +1,0 @@
-{
-	"name": "react2",
-	"version": "1.0.0",
-	"dependencies": {
-		"stylelint": "^12.0.0"
-	}
-}
