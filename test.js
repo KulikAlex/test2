@@ -6,6 +6,7 @@ const stylelint_opt = ()=>{
 }
 
 async function useLint() {
+    console.error('process.cwd()'+process.cwd());
     const data = await stylelint.lint({
         files: '**/*.css',
         config: stylelint_opt()
