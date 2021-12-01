@@ -7,12 +7,11 @@ const stylelint_opt = ()=>{
 }
 
 async function useLint() {
-try{
     const data = await stylelint.lint({
         files: './**/*.css',
         config: stylelint_opt()
-    });}catch(e){
-    console.error(e.message);}
+    });
+    console.error('out');
     for (let result of data.results) {
         for (let warning of result.warnings) {
             console.error(String(Object.keys(warning)));
