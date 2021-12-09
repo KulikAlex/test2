@@ -37,7 +37,7 @@ async function test() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
-    await page.goto('https://localhost:3000');
+    await page.goto('http://localhost:3000');
     await page.screenshot({ path: 'output/example.png' });
     await browser.close();
 }
