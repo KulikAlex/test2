@@ -14,6 +14,9 @@ async function useLint() {
     });
     for (let result of data.results) {
         for (let warning of result.warnings) {
+            if (path.relative(process.cwd(), result.source).startsWith('build/')) {
+                continue;
+            }
             console.error(`${path.relative(process.cwd(), result.source)} ${warning.line}:${warning.column} ${warning.text}`);
         }
     }
