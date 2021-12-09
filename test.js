@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const stylelint = require('stylelint');
+const puppeteer = require('puppeteer');
 
 const stylelint_opt = ()=>{
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'stylelint.json'), 'utf-8').toString());
@@ -31,6 +32,14 @@ async function test() {
         console.error(`Файл \`${'README.md'}\` не создан.`);
     }
     await useLint();
+
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1920, height: 1080 });
+    await page.goto('https://example.com');
+    await page.screenshot({ path: 'output/example.png' });
+    await browser.close();
 }
 
 test().then(errors=>{}
