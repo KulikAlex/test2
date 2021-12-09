@@ -36,8 +36,9 @@ async function test() {
     }
     await useLint();
 
-
+console.error('puppeteer.launch');
     const browser = await puppeteer.launch();
+console.error('browser.newPage');
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto('http://localhost:3000');
