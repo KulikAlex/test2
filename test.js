@@ -40,9 +40,7 @@ async function test() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto('http://localhost:3000');
-console.error('page.screenshot');
     await page.screenshot({ path: 'test2/output/example.png' });
-console.error('browser.close');
     await browser.close();
 }
 
