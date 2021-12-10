@@ -40,9 +40,13 @@ console.error('puppeteer.launch');
     const browser = await puppeteer.launch();
 console.error('browser.newPage');
     const page = await browser.newPage();
+console.error('page.setViewport');
     await page.setViewport({ width: 1920, height: 1080 });
+console.error('page.goto');
     await page.goto('http://localhost:3000');
+console.error('page.screenshot');
     await page.screenshot({ path: 'output/example.png' });
+console.error('browser.close');
     await browser.close();
 }
 
